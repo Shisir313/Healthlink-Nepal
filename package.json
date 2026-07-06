@@ -9,6 +9,8 @@
     "build:dev": "vite build --mode development",
     "lint": "eslint .",
     "preview": "vite preview",
+    "start": "node ./scripts/start-preview.mjs",
+    "src": "node ./scripts/start-preview.mjs",
     "cap:build": "vite build && npx cap sync",
     "cap:android": "vite build && npx cap sync && npx cap open android",
     "cap:ios": "vite build && npx cap sync && npx cap open ios",
