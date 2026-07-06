@@ -1,0 +1,293 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Noto+Sans+Devanagari:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 180 20% 99%;
+    --foreground: 180 25% 15%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 180 25% 15%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 180 25% 15%;
+
+    --primary: 168 80% 32%;
+    --primary-foreground: 0 0% 100%;
+    --primary-light: 168 60% 95%;
+
+    --secondary: 180 15% 96%;
+    --secondary-foreground: 180 25% 25%;
+
+    --muted: 180 10% 94%;
+    --muted-foreground: 180 10% 45%;
+
+    --accent: 180 60% 92%;
+    --accent-foreground: 168 80% 25%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --emergency: 24 95% 53%;
+    --emergency-foreground: 0 0% 100%;
+    --emergency-light: 24 100% 95%;
+
+    --success: 142 76% 36%;
+    --success-foreground: 0 0% 100%;
+    --success-light: 142 60% 95%;
+
+    --warning: 45 93% 47%;
+    --warning-foreground: 45 100% 15%;
+    --warning-light: 45 100% 95%;
+
+    --info: 199 89% 48%;
+    --info-foreground: 0 0% 100%;
+
+    --border: 180 15% 90%;
+    --input: 180 15% 90%;
+    --ring: 168 80% 32%;
+
+    --radius: 1rem;
+
+    --gradient-hero: linear-gradient(135deg, hsl(168 80% 32%) 0%, hsl(180 60% 40%) 100%);
+    --gradient-emergency: linear-gradient(135deg, hsl(24 95% 53%) 0%, hsl(0 84% 60%) 100%);
+    --gradient-card: linear-gradient(180deg, hsl(0 0% 100%) 0%, hsl(180 20% 98%) 100%);
+    --gradient-background: linear-gradient(180deg, hsl(180 30% 98%) 0%, hsl(180 20% 96%) 100%);
+
+    --shadow-sm: 0 1px 2px 0 hsl(180 25% 15% / 0.05);
+    --shadow-md: 0 4px 6px -1px hsl(180 25% 15% / 0.1), 0 2px 4px -2px hsl(180 25% 15% / 0.1);
+    --shadow-lg: 0 10px 15px -3px hsl(180 25% 15% / 0.1), 0 4px 6px -4px hsl(180 25% 15% / 0.1);
+    --shadow-xl: 0 20px 25px -5px hsl(180 25% 15% / 0.1), 0 8px 10px -6px hsl(180 25% 15% / 0.1);
+    --shadow-glow: 0 0 20px hsl(168 80% 32% / 0.3);
+    --shadow-emergency: 0 0 30px hsl(24 95% 53% / 0.4);
+
+    --font-sans: 'Inter', system-ui, sans-serif;
+    --font-nepali: 'Noto Sans Devanagari', 'Inter', system-ui, sans-serif;
+  }
+
+  .dark {
+    --background: 180 25% 8%;
+    --foreground: 180 10% 95%;
+
+    --card: 180 20% 12%;
+    --card-foreground: 180 10% 95%;
+
+    --popover: 180 20% 12%;
+    --popover-foreground: 180 10% 95%;
+
+    --primary: 168 70% 45%;
+    --primary-foreground: 0 0% 100%;
+    --primary-light: 168 60% 15%;
+
+    --secondary: 180 15% 18%;
+    --secondary-foreground: 180 10% 90%;
+
+    --muted: 180 15% 20%;
+    --muted-foreground: 180 10% 60%;
+
+    --accent: 180 30% 20%;
+    --accent-foreground: 168 70% 60%;
+
+    --destructive: 0 62% 50%;
+    --destructive-foreground: 0 0% 100%;
+
+    --emergency: 24 90% 50%;
+    --emergency-foreground: 0 0% 100%;
+    --emergency-light: 24 80% 15%;
+
+    --success: 142 60% 45%;
+    --success-foreground: 0 0% 100%;
+    --success-light: 142 50% 15%;
+
+    --warning: 45 80% 50%;
+    --warning-foreground: 45 100% 10%;
+    --warning-light: 45 60% 15%;
+
+    --border: 180 15% 20%;
+    --input: 180 15% 20%;
+    --ring: 168 70% 45%;
+
+    --gradient-hero: linear-gradient(135deg, hsl(168 70% 30%) 0%, hsl(180 50% 25%) 100%);
+    --gradient-card: linear-gradient(180deg, hsl(180 20% 12%) 0%, hsl(180 20% 10%) 100%);
+    --gradient-background: linear-gradient(180deg, hsl(180 25% 8%) 0%, hsl(180 20% 6%) 100%);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-family: var(--font-sans);
+  }
+
+  body.nepali {
+    font-family: var(--font-nepali);
+  }
+}
+
+@layer utilities {
+  .font-nepali {
+    font-family: var(--font-nepali);
+  }
+
+  .gradient-hero {
+    background: var(--gradient-hero);
+  }
+
+  .gradient-emergency {
+    background: var(--gradient-emergency);
+  }
+
+  .gradient-card {
+    background: var(--gradient-card);
+  }
+
+  .gradient-background {
+    background: var(--gradient-background);
+  }
+
+  .shadow-glow {
+    box-shadow: var(--shadow-glow);
+  }
+
+  .shadow-emergency {
+    box-shadow: var(--shadow-emergency);
+  }
+
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+@layer components {
+  .btn-emergency {
+    @apply relative overflow-hidden bg-emergency text-emergency-foreground font-semibold py-4 px-8 rounded-2xl;
+    @apply shadow-lg hover:shadow-emergency transition-all duration-300;
+    @apply active:scale-95 transform;
+  }
+
+  .btn-emergency::before {
+    content: '';
+    @apply absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent;
+    @apply -translate-x-full animate-shimmer;
+  }
+
+  .card-healthcare {
+    @apply bg-card rounded-2xl p-5 border border-border/50;
+    @apply shadow-md hover:shadow-lg transition-all duration-300;
+    @apply hover:-translate-y-1;
+  }
+
+  .feature-card {
+    @apply bg-card rounded-3xl p-6 border border-border/30;
+    @apply shadow-lg hover:shadow-xl transition-all duration-500;
+    @apply hover:-translate-y-2 hover:border-primary/30;
+  }
+
+  .nav-item {
+    @apply flex flex-col items-center gap-1 p-3 rounded-xl;
+    @apply text-muted-foreground hover:text-primary hover:bg-primary-light;
+    @apply transition-all duration-200 active:scale-95;
+  }
+
+  .nav-item.active {
+    @apply text-primary bg-primary-light;
+  }
+}
+
+@keyframes shimmer {
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+@keyframes pulse-emergency {
+  0%, 100% {
+    box-shadow: 0 0 0 0 hsl(24 95% 53% / 0.7);
+  }
+  50% {
+    box-shadow: 0 0 0 15px hsl(24 95% 53% / 0);
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slide-up {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scale-in {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.animate-shimmer {
+  animation: shimmer 2s infinite;
+}
+
+.animate-pulse-emergency {
+  animation: pulse-emergency 2s infinite;
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.animate-fade-in {
+  animation: fade-in 0.5s ease-out forwards;
+}
+
+.animate-slide-up {
+  animation: slide-up 0.6s ease-out forwards;
+}
+
+.animate-scale-in {
+  animation: scale-in 0.4s ease-out forwards;
+}
+
+.stagger-1 { animation-delay: 0.1s; }
+.stagger-2 { animation-delay: 0.2s; }
+.stagger-3 { animation-delay: 0.3s; }
+.stagger-4 { animation-delay: 0.4s; }
+.stagger-5 { animation-delay: 0.5s; }

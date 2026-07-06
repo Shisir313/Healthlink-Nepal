@@ -1,0 +1,39 @@
+import type { CapacitorConfig } from '@capacitor/cli';
+
+const config: CapacitorConfig = {
+  appId: 'com.healthlinknepal.app',
+  appName: 'Healthlink Nepal',
+  webDir: 'dist',
+  server: {
+    androidScheme: 'https',
+    // Allow cleartext for localhost during development
+    allowNavigation: ['*'],
+  },
+  android: {
+    backgroundColor: '#ffffff',
+    allowMixedContent: true,
+  },
+  ios: {
+    backgroundColor: '#ffffff',
+    contentInset: 'automatic',
+    scrollEnabled: true,
+  },
+  plugins: {
+    SplashScreen: {
+      launchShowDuration: 2500,
+      launchAutoHide: true,
+      backgroundColor: '#0D9488',
+      androidSplashResourceName: 'splash',
+      androidScaleType: 'CENTER_CROP',
+      showSpinner: false,
+      splashFullScreen: true,
+      splashImmersive: true,
+    },
+    StatusBar: {
+      style: 'default',
+      backgroundColor: '#0D9488',
+    },
+  },
+};
+
+export default config;
